@@ -1,0 +1,92 @@
+% !TeX root = resume.tex
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[
+  margin=1in,
+  % includefoot,
+  footskip=30pt,
+]{geometry}
+\usepackage{layout}
+\usepackage{titlesec}
+
+% tune the spacing between titles in here
+\titlespacing{\section}{0pt}{20pt plus 4pt minus 3pt}{10pt plus 2pt minus 2pt}
+
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{fontawesome}
+\usepackage{graphicx}
+
+\setlist{nolistsep}
+
+\input{style.tex}
+
+%-------------------------
+% Custom commands
+
+\newcommand{\plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}
+\newcommand{\bedgeItem}[2]{#1 \space #2}
+\newcommand{\latex}{\LaTeX\xspace}
+
+
+% ---------------- CV Item Selection ----------------
+\usepackage{ifthen}
+\usepackage{etoolbox}
+
+% CGA Toggle
+\newboolean{showCGA}
+\setboolean{showCGA}{true} % set to true to show Major CGA, false to hide it
+
+% Project Selection
+\newtoggle{Ball_Shooting_Robot}
+\newtoggle{Concentration_Learning_Module}
+\newtoggle{Extra_Project}
+
+% project is false by default
+\toggletrue{Ball_Shooting_Robot}
+\toggletrue{Concentration_Learning_Module}
+
+% Leadership and ECA Selection
+\newtoggle{HKUST_Robotics_Team}
+\newtoggle{Other_Experience}
+
+% leadership and eca is false by default
+\toggletrue{HKUST_Robotics_Team}
+\toggletrue{Other_Experience}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\input{module/heading.tex}
+
+%-----------Education-----------------
+\input{module/education.tex}
+    
+%-----------Work Experience-----------------
+\input{module/work_experience.tex}
+
+%-----------Extra-Curricular Activities-----------------
+\input{module/leadership_eca.tex}
+
+%-----------Projects-----------------
+\input{module/project.tex}
+
+%-----------Awards-----------------
+\input{module/award.tex}
+
+%-----------Technical Skills-----------------
+\input{module/skill.tex}
+
+\end{document}
+
+%%%%%%  CV ENDS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------
